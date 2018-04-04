@@ -1,7 +1,5 @@
-// browserSync = require('browser-sync').create(),
-// rename = require('gulp-rename'),
 var autoprefixer = require('gulp-autoprefixer');
-var browserify = require('browserify');
+var browserify = require('gulp-browserify');
 var browserSync = require('browser-sync');
 var buffer = require('vinyl-buffer');
 var cache = require('gulp-cache');
@@ -36,8 +34,8 @@ gulp.task('image', getTask('image'));
 gulp.task('libs', getTask('libs'));
 
 gulp.task('watch', ['browser-sync', 'sass', 'scripts', 'image', 'libs'], function() {
-	gulp.watch('src/scss/**/*.scss', ['sass']);
-	gulp.watch('src/js/**/*.js', ['scripts']);
+	gulp.watch('dev/scss/**/*.scss', ['sass']);
+	gulp.watch('dev/js/**/*.js', ['scripts']);
 	gulp.watch('template/**/*.twig', reload);
 });
 
